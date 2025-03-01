@@ -1,4 +1,6 @@
-# API Documentation
+# Dev APIs
+
+Notice: The documentation is also available at https://nicesapien.github.io/dev-apis
 
 ## Overview
 

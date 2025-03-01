@@ -43,7 +43,7 @@ app.post("/store-text", (req, res) => {
     setTimeout(() => {
         delete textStorage[id];
     }, 48 * 60 * 60 * 1000);
-    res.json({ url: `https://nicesapien.hackclub.app/get-text/${id}` });
+    res.json({ url: `https://devapi.heckstack.tech/get-text/${id}` });
 });
 
 // GET endpoint to retrieve text
