@@ -34,7 +34,7 @@ The request body must be a JSON object containing the following field:
   - On success:
     ```json
     {
-      "url": "http://localhost:<PORT>/get-text/<id>"
+      "url": "http://nicesapien.hackclub.app/get-text/<id>"
     }
     ```
   - On error:
@@ -53,7 +53,7 @@ The request body must be a JSON object containing the following field:
 #### Example Request
 
 ```bash
-curl -X POST http://localhost:<PORT>/store-text \
+curl -X POST http://nicesapien.hackclub.app/store-text \
 -H "Content-Type: application/json" \
 -d '{"text": "Your text here"}'
 ```
