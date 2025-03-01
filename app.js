@@ -43,7 +43,7 @@ app.post("/store-text", (req, res) => {
     setTimeout(() => {
         delete textStorage[id];
     }, 48 * 60 * 60 * 1000);
-    res.json({ url: `http://localhost:${PORT}/get-text/${id}` });
+    res.json({ url: `https://nicesapien.hackclub.app/get-text/${id}` });
 });
 
 // GET endpoint to retrieve text
@@ -90,7 +90,7 @@ app.get("/convert-timestamp", (req, res) => {
 
   res.json({ timestamp, datetime: date.toISOString() });
 });
-
+/* Self-Hosting only
 app.get("/get-weather", async (req, res) => {
   const { city } = req.query;
   if (!city) return res.status(400).json({ error: "City is required" });
@@ -104,7 +104,7 @@ app.get("/get-weather", async (req, res) => {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
-});
+}); */
 
 app.get("/get-currency-exchange", async (req, res) => {
   const { base, target } = req.query;

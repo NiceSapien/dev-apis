@@ -58,6 +58,47 @@ curl -X POST http://localhost:<PORT>/store-text \
 -d '{"text": "Your text here"}'
 ```
 
+## GET /get-weather
+
+> This is unavailable in the public API. You must self-host to use this.
+
+This endpoint retrieves the current weather information for a specified city.
+
+#### Request
+
+- **Method:** GET
+- **URL:** `/get-weather`
+- **Query Parameters:**
+  - `city` (string, required): The name of the city for which to retrieve weather information.
+
+#### Response
+
+- **Status Code:**
+  - `200 OK` - If the weather information is successfully retrieved.
+  - `400 Bad Request` - If the city parameter is missing.
+  - `500 Internal Server Error` - If there is an error while fetching data from the weather API.
+
+- **Response Body:**
+  - On success: The weather data returned from the OpenWeatherMap API in JSON format.
+  - On error (missing city):
+    ```json
+    {
+      "error": "City is required"
+    }
+    ```
+  - On error (internal server error):
+    ```json
+    {
+      "error": "Internal server error"
+    }
+    ```
+
+#### Example Request
+
+```bash
+curl '/get-weather?city=London'
+```
+
 ## Generate UUID
 
 Used to generate a UUID
