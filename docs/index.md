@@ -1,4 +1,62 @@
-These are a few, commonly used, REST APIs that will come in handy when building your next project. Although I recommend you to self-host these, you can use the public server if you want!
+# API Documentation
+
+## Overview
+
+This documentation covers a set of commonly used REST APIs that will come in handy when building your next project. Although self-hosting is recommended, you can use the public server if desired.
+
+---
+
+## Text Storage API
+
+### POST /store-text
+
+This endpoint allows users to store text.
+
+#### Request
+
+- **Method:** POST
+- **URL:** `/store-text`
+- **Content-Type:** `application/json`
+
+#### Request Body
+
+The request body must be a JSON object containing the following field:
+
+- `text` (string, required): The text to be stored. It must not exceed 50,000 characters.
+
+#### Response
+
+- **Status Code:** 
+  - `200 OK` - If the text is successfully stored.
+  - `400 Bad Request` - If the text is missing or exceeds the character limit.
+
+- **Response Body:**
+  - On success:
+    ```json
+    {
+      "url": "http://localhost:<PORT>/get-text/<id>"
+    }
+    ```
+  - On error:
+    ```json
+    {
+      "error": "Text is required"
+    }
+    ```
+    or
+    ```json
+    {
+      "error": "Text exceeds 50,000 character limit"
+    }
+    ```
+
+#### Example Request
+
+```bash
+curl -X POST http://localhost:<PORT>/store-text \
+-H "Content-Type: application/json" \
+-d '{"text": "Your text here"}'
+```
 
 ## Generate UUID
 
