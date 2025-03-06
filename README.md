@@ -153,4 +153,4 @@ curl '/get-currency-exchange?base=USD&target=INR'
 ```
 
 ## Rate limits
-You can make upto 30 requests every 5 minutes from the same API. To remove this limit, please self-host the API yourself.
+You can make upto 30 requests every 5 minutes from the same IP address. To remove this limit, please self-host the API yourself.
